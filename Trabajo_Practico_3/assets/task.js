@@ -1,9 +1,12 @@
 let list = [];
 
 function addTask(nombre){
+    if (nombre === '' || nombre.charAt(0) === ' ' || nombre.charAt(nombre.length - 1) === ' '){
+      alert("No se puede agregar una tarea vacía o con espacios al principio o al final.");      
+    }else{
     alert("Se ha agregado la tarea de: "+nombre);
     list.push(nombre);
-}
+    }}
 function listTasks(){
     if (list.length <=0){
         alert("No hay tareas pendientes")
@@ -56,7 +59,8 @@ accion = parseInt(prompt("Elija acción a realizar:\n1-Agregar tarea.\n2-Listar 
             deleteTask(prompt("¿Qué tarea quieres eliminar"));  
             break;      
         case 5:
-            alert("Saliendo del programa...")    
+            alert("Saliendo del programa...")  
+            break; 
         default:
             alert("Acción inválida");
         }
